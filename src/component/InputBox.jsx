@@ -6,7 +6,7 @@ function Input({
     label,
     amount,
     onamountchange,
-    oncurrencychange = [(currency) => setfrom(currency)] ,
+    oncurrencychange = () => {},//[(currency) => setfrom(currency)] ,
     currencyoptions = [],
     selectcurrency = "usd",
     amountdisable = false,
@@ -29,7 +29,7 @@ function Input({
                     placeholder="Amount"
                     disabled={amountdisable}
                     value={amount}
-                    onChange={(e)=>onamountchange && onamountchange(Number(e.target.value))}
+                    onChange={(e) =>  onamountchange && onamountchange(e.target.value) } //onChange={(e)=>onamountchange && onamountchange(Number(e.target.value))}
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">

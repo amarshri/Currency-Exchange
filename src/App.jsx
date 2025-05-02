@@ -5,10 +5,10 @@ import useCurrency from './hook/usecinfo'
 
 function App() {
 
-const [amount,setamount] = useState(0)
+const [amount,setamount] = useState("")
 const [from,setfrom] = useState("usd")
 const [to,setto] = useState("inr")
-const [convertedamount,setconamount] = useState(0)
+const [convertedamount,setconamount] = useState("")
 
 const currencyinfo = useCurrency(from)
 const options = Object.keys(currencyinfo) 
@@ -26,13 +26,13 @@ const convert = ()=>{
 
 return (
   <div
-      className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
-      style={{
-          backgroundImage: `url('https://images.pexels.com/photos/29421579/pexels-photo-29421579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
-      }}
+      className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat bg-center  sm:bg-[url('https://images.pexels.com/photos/11646613/pexels-photo-11646613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-[url('https://images.pexels.com/photos/17977097/pexels-photo-17977097/free-photo-of-bitcoin-dollar-and-chart.jpeg')] "
+    //   style={{
+    //    //   backgroundImage:`url('https://images.pexels.com/photos/8358034/pexels-photo-8358034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`, //`url('https://images.pexels.com/photos/29421579/pexels-photo-29421579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
+    //   }}
   >
       <div className="w-full">
-          <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30 ">
+          <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5  backdrop-blur-sm bg-[#55647d71] ">
               <form
                   onSubmit={(e) => {
                       e.preventDefault();
@@ -44,7 +44,7 @@ return (
                           label="From"
                           amount={amount}
                           currencyoptions={options}
-                          oncurrencychange={(currency)=>setamount(amount)}
+                          oncurrencychange={(currency)=>setfrom(currency)}
                           selectcurrency={from}
                           onamountchange={(amount)=>setamount(amount)}
                       />
