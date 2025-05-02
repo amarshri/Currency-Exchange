@@ -7,4 +7,10 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()],
-})
+
+
+
+    base:"/Currency-Exchange",
+
+
+});
